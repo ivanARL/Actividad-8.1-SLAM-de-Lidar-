@@ -1,9 +1,4 @@
-%% EXAMPLE: Differential Drive Path Following
-% In this example, a differential drive robot navigates a set of waypoints 
-% using the Pure Pursuit algorithm while avoiding obstacles using the
-% Vector Field Histogram (VFH) algorithm.
-% 
-% Copyright 2019 The MathWorks, Inc.
+
 
 %% Simulation setup
 % Define Vehicle
@@ -21,23 +16,15 @@ pose = zeros(3,numel(tVec));   % Pose matrix
 pose(:,1) = initPose;
 
 
-% Load map
 
-%complexMap       41x52                2132  logical              
-%emptyMap         26x27                 702  logical              
-%simpleMap        26x27                 702  logical              
-%ternaryMap      501x501            2008008  double  
 
 close all
 load exampleMap
 
-% Creamos una cuadrícula de coordenadas sobre el área que nos estorba
-% (desde X=3.5 hasta 4.5, y desde Y=0.5 hasta 2.5)
+
 [X_grid, Y_grid] = meshgrid(3:0.1:5, 0.5:0.1:2.5);
 
-% Le decimos al mapa que todos esos puntos ahora son espacio libre (0)
-setOccupancy(map, [X_grid(:), Y_grid(:)], 0);
-% ---------------------------------------------------------------
+
 
 % Create lidar sensor
 lidar = LidarSensor;
