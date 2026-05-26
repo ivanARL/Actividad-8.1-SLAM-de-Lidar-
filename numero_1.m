@@ -16,12 +16,7 @@ pose = zeros(3,numel(tVec));   % Pose matrix
 pose(:,1) = initPose;
 
 
-% Load map
 
-%complexMap       41x52                2132  logical              
-%emptyMap         26x27                 702  logical              
-%simpleMap        26x27                 702  logical              
-%ternaryMap      501x501            2008008  double  
 
 close all
 load exampleMap
